@@ -1,16 +1,14 @@
 let input = [73, 74, 75, 71, 69, 72, 76, 73];
 
 function daysToWaitForWarm(arr) {
-  let daysToWait = [];
-  let j = 1;
-  for(let i =0; i < arr.length-1; i++) {
-    if(arr[j] > arr[i]) {
-      daysToWait.push(j - i);
-      j +=1;
-    } else if (arr[j] < arr[i]) {
-      
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    let j = i + 1;
+    while (arr[j] < arr[i]) {
+      j++
     }
+    array.push(j - i)
   }
-  console.log(daysToWait)
+  return array
 }
-daysToWaitForWarm(input)
+console.log(daysToWaitForWarm(input))

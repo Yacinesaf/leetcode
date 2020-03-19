@@ -23,4 +23,12 @@ function isSmall(arr) {
   console.log(obj)
 }
 
-isSmall(is)
+// isSmall(is)
+
+
+let dd = is.map(x => {
+  let copy = is.map(y => y - x)
+  return copy.filter(y => y < 0).length
+})
+
+console.log(dd)
